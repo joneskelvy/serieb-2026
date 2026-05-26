@@ -372,3 +372,49 @@ header {
 
   max-width: 80px;
 }
+
+.round {
+  margin-bottom: 48px;
+}
+
+.round-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+}
+
+.round-title span {
+
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #72ff00,
+      #00ff88
+    );
+
+  color: #0f172a;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 0 18px rgba(114,255,0,.35);
+}
+
+.round-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  justify-content: center;
+}

@@ -10,6 +10,22 @@ function createCard(date, day, games) {
   `
 }
 
+function createRound(round, cards) {
+  return `
+    <section class="round">
+
+      <div class="round-title">
+        <span>${round}ª Rodada</span>
+      </div>
+
+      <div class="round-cards">
+        ${cards}
+      </div>
+
+    </section>
+  `
+}
+
 function createGame(player1, hour, player2, score1 = "-", score2 = "-") {
 
   const player1Name = formatTeamName(player1)
@@ -89,6 +105,10 @@ function formatTeamName(name) {
 }
 
 document.querySelector("#cards").innerHTML =
+
+  createRound(
+    1,
+
   createCard(
   "21/03",
   "sabado",
@@ -106,7 +126,11 @@ document.querySelector("#cards").innerHTML =
       createGame("athletic", "18:00", "ponte", 2, 1) +
       createGame("goias", "18:00", "america", 3, 1) +
       createGame("novorizontino", "20:00", "londrina", 1, 3)
-     ) +
+    ) 
+    ) +
+
+    createRound(2,
+
     createCard(
     "31/03",
     "terça",
@@ -128,7 +152,11 @@ document.querySelector("#cards").innerHTML =
     "02/04",
     "quinta",
     createGame("bernardo", "19:00", "operario", 1,2)
+  )
   ) +
+
+    createRound(3,
+
   createCard(
     "04/04",
     "sábado",
@@ -150,7 +178,11 @@ document.querySelector("#cards").innerHTML =
     "06/04",
     "segunda",
     createGame("goias", "21:00", "criciuma", 1,0)
+  )
   ) +
+
+      createRound(4,
+
   createCard(
     "10/04",
     "sexta",
@@ -172,7 +204,11 @@ document.querySelector("#cards").innerHTML =
       createGame("operario", "18:00", "cuiaba", 0,0) +
       createGame("crb", "20:00", "athletic", 2,3) +
       createGame("atletico", "20:30", "londrina", 2,1)
+  )
   ) +
+
+        createRound(5,
+
   createCard(
     "18/04",
     "sabado",
@@ -190,7 +226,11 @@ document.querySelector("#cards").innerHTML =
       createGame("goias", "18:00", "cuiaba", 0,2) +
       createGame("novorizontino", "20:00", "athletic", 2,1) +
       createGame("fortaleza", "20:00", "criciuma", 3,2)
+    )
     ) +
+
+    createRound(6,
+
     createCard(
     "22/04",
     "quarta",
@@ -220,7 +260,11 @@ document.querySelector("#cards").innerHTML =
     "27/04",  
     "segunda",
     createGame("athletic", "19:00", "nautico", 0,1)
+  )
   ) +
+
+    createRound(7,
+
   createCard(
     "02/05",
     "sabado",
@@ -243,7 +287,11 @@ document.querySelector("#cards").innerHTML =
     "04/05",
     "segunda",  
     createGame("vila", "20:00", "athletic", 1,1) 
+  )
   ) +
+
+    createRound(8,
+
   createCard(
     "09/05",
     "sábado",
@@ -265,7 +313,11 @@ document.querySelector("#cards").innerHTML =
     "11/05",
     "segunda",
     createGame("londrina", "20:30", "bernardo", 1,3) 
+  )
   ) +
+
+  createRound(9,
+
    createCard(  
     "16/05",
     "sábado",
@@ -281,13 +333,17 @@ document.querySelector("#cards").innerHTML =
     createGame("vila", "18:00", "avai", 2,0) +
     createGame("ceara", "18:30", "fortaleza", 2,1) +
     createGame("criciuma", "18:30", "atletico", 1,1) +
-    createGame("sport", "20:30", "londrina", 1,2)
+    createGame("sport", "20:30", "crb", 1,2)
   ) +
     createCard(
     "18/05",
     "segunda",
     createGame("ponte", "19:00", "londrina", 1,4)
+    )
   ) +
+
+  createRound(10,
+
    createCard(
     "22/05",
     "sexta",
@@ -313,7 +369,11 @@ document.querySelector("#cards").innerHTML =
     "25/05",
     "segunda",
     createGame("botafogo", "20:30", "athletic", 1,2)
+    )
   ) +
+
+
+
    createCard(
     "29/05",
     "sexta",
