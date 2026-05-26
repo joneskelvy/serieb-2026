@@ -14,8 +14,9 @@ function createRound(round, cards) {
   return `
     <section class="round">
 
-      <div class="round-title">
-        <span>${round}ª Rodada</span>
+      <div class="round-badge">
+        <span>RODADA</span>
+        <strong>${round}</strong>
       </div>
 
       <div class="round-cards">
@@ -31,6 +32,33 @@ function createGame(player1, hour, player2, score1 = "-", score2 = "-") {
   const player1Name = formatTeamName(player1)
   const player2Name = formatTeamName(player2)
 
+  const roundFilter = document.querySelector("#roundFilter")
+
+roundFilter.addEventListener("change", filterRounds)
+
+function filterRounds() {
+
+  const selectedRound = roundFilter.value
+
+  const rounds = document.querySelectorAll(".round")
+
+  rounds.forEach(round => {
+
+    const roundNumber = round.dataset.round
+
+    if (
+      selectedRound === "all" ||
+      selectedRound === roundNumber
+    ) {
+
+      round.style.display = "block"
+
+    } else {
+
+      round.style.display = "none"
+    }
+  })
+}
   
 
   return `
@@ -371,10 +399,10 @@ document.querySelector("#cards").innerHTML =
     createGame("botafogo", "20:30", "athletic", 1,2)
     )
   ) +
+    
+    createRound(11,
 
-
-
-   createCard(
+  createCard(
     "29/05",
     "sexta",
     createGame("juventude", "19:00", "america",) 
@@ -386,7 +414,23 @@ document.querySelector("#cards").innerHTML =
     createGame("avai", "16:00", "criciuma",) +
     createGame("athletic", "18:00", "fortaleza",) +
     createGame("sport", "20:30", "nautico",) 
+  ) +
+  createCard(
+    "31/05",
+    "domingo",
+    createGame("bernardo", "11:00", "novorizontino",) +
+    createGame("londrina", "11:00", "vila",) +
+    createGame("ceara", "16:00", "operario",) +
+    createGame("cuiaba", "20:30", "crb",) 
+  ) +
+  createCard(
+    "01/06",
+    "segunda",
+    createGame("ponte", "19:00", "botafogo",) 
   )
+)
+
+
 
 
 
