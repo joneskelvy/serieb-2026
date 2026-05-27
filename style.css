@@ -455,3 +455,64 @@ header {
   box-shadow:
     0 0 18px rgba(114,255,0,.18);
 }
+
+.round-badge {
+  width: fit-content;
+
+  margin: 0 auto 2rem;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 140, 0.15),
+    rgba(0, 140, 255, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 140, 0.18),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.round-badge:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 30px rgba(0, 255, 140, 0.35),
+    inset 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.round-badge span {
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.round-badge strong {
+  font-size: 1.5rem;
+
+  font-weight: 900;
+
+  color: #00ff88;
+
+  text-shadow:
+    0 0 10px rgba(0, 255, 136, 0.5),
+    0 0 20px rgba(0, 255, 136, 0.3);
+}
+
