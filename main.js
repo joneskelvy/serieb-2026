@@ -12,7 +12,7 @@ function createCard(date, day, games) {
 
 function createRound(round, cards) {
   return `
-    <section class="round">
+    <section class="round" data-round="${round}">
 
       <div class="round-badge">
         <span>RODADA</span>
@@ -32,35 +32,6 @@ function createGame(player1, hour, player2, score1 = "-", score2 = "-") {
   const player1Name = formatTeamName(player1)
   const player2Name = formatTeamName(player2)
 
-  const roundFilter = document.querySelector("#roundFilter")
-
-roundFilter.addEventListener("change", filterRounds)
-
-function filterRounds() {
-
-  const selectedRound = roundFilter.value
-
-  const rounds = document.querySelectorAll(".round")
-
-  rounds.forEach(round => {
-
-    const roundNumber = round.dataset.round
-
-    if (
-      selectedRound === "all" ||
-      selectedRound === roundNumber
-    ) {
-
-      round.style.display = "block"
-
-    } else {
-
-      round.style.display = "none"
-    }
-  })
-}
-  
-
   return `
     <li>
 
@@ -72,9 +43,8 @@ function filterRounds() {
         >
 
         <span class="team-name">
-        ${player1Name}
+          ${player1Name}
         </span>
-
       </div>
 
       <div class="match-info">
@@ -96,15 +66,17 @@ function filterRounds() {
           title="${player2Name}"
         >
 
-         <span class="team-name">
-         ${player2Name}
+        <span class="team-name">
+          ${player2Name}
         </span>
       </div>
 
     </li>
   `
 }
+
 function formatTeamName(name) {
+
   const team = {
     vila: "Vila Nova",
     crb: "CRB",
@@ -125,11 +97,13 @@ function formatTeamName(name) {
     goias: "Goiás",
     america: "América-MG",
     novorizontino: "Novorizontino",
-    londrina: "Londrina",  
+    londrina: "Londrina",
   }
 
-  return team[name] || 
+  return (
+    team[name] ||
     name.charAt(0).toUpperCase() + name.slice(1)
+  )
 }
 
 document.querySelector("#cards").innerHTML =
@@ -137,51 +111,60 @@ document.querySelector("#cards").innerHTML =
   createRound(
     1,
 
-  createCard(
-  "21/03",
-  "sabado",
-  createGame("vila", "17:00", "crb", 2,2) +
-  createGame("ceara", "18:00", "bernardo", 1,1) +
-  createGame("operario", "18:15", "atletico", 1, 0) +
-  createGame("botafogo", "19:15", "fortaleza", 4, 0) +
-  createGame("cuiaba", "20:00", "sport", 0,0)
-)   +
     createCard(
-    "22/03",
-    "domingo",
-    createGame("avai", "16:00", "juventude", 2, 0) +
+      "21/03",
+      "sábado",
+
+      createGame("vila", "17:00", "crb", 2, 2) +
+      createGame("ceara", "18:00", "bernardo", 1, 1) +
+      createGame("operario", "18:15", "atletico", 1, 0) +
+      createGame("botafogo", "19:15", "fortaleza", 4, 0) +
+      createGame("cuiaba", "20:00", "sport", 0, 0)
+    ) +
+
+    createCard(
+      "22/03",
+      "domingo",
+
+      createGame("avai", "16:00", "juventude", 2, 0) +
       createGame("nautico", "16:00", "criciuma", 0, 1) +
       createGame("athletic", "18:00", "ponte", 2, 1) +
       createGame("goias", "18:00", "america", 3, 1) +
       createGame("novorizontino", "20:00", "londrina", 1, 3)
-    ) 
-    ) +
+    )
+  ) +
 
-    createRound(2,
+  createRound(
+  2,
 
-    createCard(
+  createCard(
     "31/03",
     "terça",
+
     createGame("juventude", "18:30", "novorizontino", 0, 0) +
-      createGame("fortaleza", "19:00", "cuiaba", 0, 0)
-    ) +
+    createGame("fortaleza", "19:00", "cuiaba", 0, 0)
+  ) +
+
   createCard(
     "01/04",
     "quarta",
-    createGame("america", "18:00", "botafogo", 1,2) +
-      createGame("londrina", "19:00", "goias", 2,2) +
-      createGame("atletico", "19:00", "nautico", 1,2) +
-      createGame("sport", "19:00", "vila", 1,1) +
-      createGame("ponte", "21:00", "ceara", 1,1) +
-      createGame("criciuma", "21:30", "athletic", 1,1) +
-      createGame("crb", "21:30", "avai", 0, 1) 
-    ) +
+
+    createGame("america", "18:00", "botafogo", 1, 2) +
+    createGame("londrina", "19:00", "goias", 2, 2) +
+    createGame("atletico", "19:00", "nautico", 1, 2) +
+    createGame("sport", "19:00", "vila", 1, 1) +
+    createGame("ponte", "21:00", "ceara", 1, 1) +
+    createGame("criciuma", "21:30", "athletic", 1, 1) +
+    createGame("crb", "21:30", "avai", 0, 1)
+  ) +
+
   createCard(
     "02/04",
     "quinta",
-    createGame("bernardo", "19:00", "operario", 1,2)
+
+    createGame("bernardo", "19:00", "operario", 1, 2)
   )
-  ) +
+) +
 
     createRound(3,
 
@@ -430,12 +413,35 @@ document.querySelector("#cards").innerHTML =
   )
 )
 
+const roundFilter = document.querySelector("#roundFilter")
 
+roundFilter.addEventListener("change", filterRounds)
 
+function filterRounds() {
 
+  const selectedRound = roundFilter.value
 
+  const rounds = document.querySelectorAll(".round")
 
-    if ("serviceWorker" in navigator) {
+  rounds.forEach(round => {
+
+    const roundNumber = round.dataset.round
+
+    if (
+      selectedRound === "all" ||
+      selectedRound === roundNumber
+    ) {
+
+      round.style.display = "block"
+
+    } else {
+
+      round.style.display = "none"
+    }
+  })
+}
+
+if ("serviceWorker" in navigator) {
 
   navigator.serviceWorker
     .register("./service-worker.js")
@@ -443,7 +449,6 @@ document.querySelector("#cards").innerHTML =
     .then(() => {
       console.log("Service Worker registrado")
     })
-
 }
 
 async function getLiveGames() {
@@ -454,7 +459,7 @@ async function getLiveGames() {
       method: "GET",
 
       headers: {
-        "X-RapidAPI-Key": "ee4ff7aed956a2b95e3744750f395191",
+        "X-RapidAPI-Key": "SUA_CHAVE_API",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
       }
     }
@@ -463,6 +468,4 @@ async function getLiveGames() {
   const data = await response.json()
 
   console.log(data)
-
 }
-      
