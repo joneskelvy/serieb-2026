@@ -74,8 +74,9 @@
 
 <body>
 
-
   <div id="app">
+
+    <!-- HEADER -->
 
     <header>
 
@@ -86,41 +87,93 @@
 
     </header>
 
-    <div class="filters">
+    <!-- MENU -->
 
-      
+    <nav class="menu">
 
-<select id="roundFilter">
+      <button class="menu-btn active" id="btnGames">
+        Jogos
+      </button>
 
-  <option value="all">
-    Todas as Rodadas
-  </option>
+      <button class="menu-btn" id="btnTable">
+        Classificação
+      </button>
 
-  <option value="1">1ª Rodada</option>
-  <option value="2">2ª Rodada</option>
-  <option value="3">3ª Rodada</option>
-  <option value="4">4ª Rodada</option>
-  <option value="5">5ª Rodada</option>
-  <option value="6">6ª Rodada</option>
-  <option value="7">7ª Rodada</option>
-  <option value="8">8ª Rodada</option>
-  <option value="9">9ª Rodada</option>
-  <option value="10">10ª Rodada</option>
-  <option value="11">11ª Rodada</option>
+    </nav>
 
-</select>
+    <!-- TELA DE JOGOS -->
 
-    </div>
+    <section id="gamesScreen">
 
-    <main id="cards">
+      <div class="filters">
 
-      <!-- Jogos renderizados via JS -->
+        <select id="roundFilter">
 
-    </main>
+          <option value="all">
+            Todas as Rodadas
+          </option>
+
+          <option value="1">1ª Rodada</option>
+          <option value="2">2ª Rodada</option>
+          <option value="3">3ª Rodada</option>
+          <option value="4">4ª Rodada</option>
+          <option value="5">5ª Rodada</option>
+          <option value="6">6ª Rodada</option>
+          <option value="7">7ª Rodada</option>
+          <option value="8">8ª Rodada</option>
+          <option value="9">9ª Rodada</option>
+          <option value="10">10ª Rodada</option>
+          <option value="11">11ª Rodada</option>
+
+        </select>
+
+      </div>
+
+      <main id="cards">
+
+        <!-- Jogos renderizados via JS -->
+
+      </main>
+
+    </section>
+
+    <!-- TELA DE CLASSIFICAÇÃO -->
+
+    <section id="tableScreen" class="hidden">
+
+      <div class="table-container">
+
+        <h2>Tabela de Classificação</h2>
+
+        <table>
+
+<div class="table-wrapper">
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Time</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>V</th>
+        <th>E</th>
+        <th>D</th>
+      </tr>
+    </thead>
+
+    <tbody id="classificationTable"></tbody>
+
+  </table>
+
+</div>
+    </section>
 
   </div>
 
   <!-- JS -->
+
   <script
     src="./main.js"
     defer
@@ -128,4 +181,6 @@
 
 </body>
 
+
 </html>
+

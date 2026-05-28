@@ -27,7 +27,8 @@ function createRound(round, cards) {
   `
 }
 
-function createGame(player1, hour, player2, score1 = "-", score2 = "-") {
+
+function createGame(player1, hour, player2, score1 = "-", score2 = "-", stadium = "") {
 
   const player1Name = formatTeamName(player1)
   const player2Name = formatTeamName(player2)
@@ -57,6 +58,8 @@ function createGame(player1, hour, player2, score1 = "-", score2 = "-") {
 
         <small>${hour}</small>
 
+       
+
       </div>
 
       <div class="flag">
@@ -84,7 +87,7 @@ function formatTeamName(name) {
     bernardo: "São Bernardo",
     operario: "Operário-PR",
     atletico: "Atlético-GO",
-    botagogo: "Botafogo-SP",
+    botafogo: "Botafogo-SP",
     fortaleza: "Fortaleza",
     cuiaba: "Cuiabá",
     sport: "Sport",
@@ -105,6 +108,12 @@ function formatTeamName(name) {
     name.charAt(0).toUpperCase() + name.slice(1)
   )
 }
+
+/*===================================
+
+JOGOS DA SÉRIE B - 2026
+
+===================================*/
 
 document.querySelector("#cards").innerHTML =
 
@@ -281,8 +290,7 @@ document.querySelector("#cards").innerHTML =
     "sabado",
     createGame("botafogo", "16:00", "nautico", 1,1) +
     createGame("cuiaba", "18:30", "criciuma", 1,1) +
-    createGame("fortaleza", "20:30", "goias", 4,1) +
-    createGame("vila", "21:00", "america", 1,0)
+    createGame("fortaleza", "20:30", "goias", 4,1) 
   ) +
   createCard(
     "03/05",
@@ -413,6 +421,12 @@ document.querySelector("#cards").innerHTML =
   )
 )
 
+/*===================================
+
+FILTRO DE RODADAS
+
+===================================*/
+
 const roundFilter = document.querySelector("#roundFilter")
 
 roundFilter.addEventListener("change", filterRounds)
@@ -441,6 +455,138 @@ function filterRounds() {
   })
 }
 
+/*===================================
+
+MENU
+
+===================================*/
+
+const btnGames =
+  document.querySelector("#btnGames")
+
+const btnTable =
+  document.querySelector("#btnTable")
+
+const gamesScreen =
+  document.querySelector("#gamesScreen")
+
+const tableScreen =
+  document.querySelector("#tableScreen")
+
+btnGames.addEventListener("click", () => {
+
+  gamesScreen.classList.remove("hidden")
+  tableScreen.classList.add("hidden")
+
+  btnGames.classList.add("active")
+  btnTable.classList.remove("active")
+
+})
+
+btnTable.addEventListener("click", () => {
+
+  gamesScreen.classList.add("hidden")
+  tableScreen.classList.remove("hidden")
+
+  btnGames.classList.remove("active")
+  btnTable.classList.add("active")
+
+})
+
+/* =========================
+   CLASSIFICAÇÃO
+========================= */
+
+const table = [
+
+  {
+    team: "Fortaleza",
+    pts: 22,
+    games: 10,
+    wins: 7,
+    draws: 1,
+    losses: 2
+  },
+
+  {
+    team: "CRB",
+    pts: 21,
+    games: 10,
+    wins: 6,
+    draws: 3,
+    losses: 1
+  },
+
+  {
+    team: "Vila Nova",
+    pts: 20,
+    games: 10,
+    wins: 6,
+    draws: 2,
+    losses: 2
+  },
+
+  {
+    team: "Goiás",
+    pts: 19,
+    games: 10,
+    wins: 6,
+    draws: 1,
+    losses: 3
+  },
+
+  {
+    team: "Sport",
+    pts: 18,
+    games: 10,
+    wins: 5,
+    draws: 3,
+    losses: 2
+  }
+
+]
+
+function renderTable() {
+
+  const classificationTable =
+    document.querySelector("#classificationTable")
+
+  classificationTable.innerHTML = ""
+
+  table.forEach((team, index) => {
+
+    classificationTable.innerHTML += `
+
+      <tr>
+
+        <td>${index + 1}</td>
+
+        <td class="team-column">
+          ${team.team}
+        </td>
+
+        <td>${team.pts}</td>
+
+        <td>${team.games}</td>
+
+        <td>${team.wins}</td>
+
+        <td>${team.draws}</td>
+
+        <td>${team.losses}</td>
+
+      </tr>
+
+    `
+  })
+}
+
+renderTable()
+
+/* =========================
+   SERVICE WORKER
+========================= */
+
 if ("serviceWorker" in navigator) {
 
   navigator.serviceWorker
@@ -451,16 +597,25 @@ if ("serviceWorker" in navigator) {
     })
 }
 
+/* =========================
+   API AO VIVO
+========================= */
+
 async function getLiveGames() {
 
   const response = await fetch(
     "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all",
     {
+
       method: "GET",
 
       headers: {
+
         "X-RapidAPI-Key": "SUA_CHAVE_API",
-        "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+
+        "X-RapidAPI-Host":
+          "api-football-v1.p.rapidapi.com"
+
       }
     }
   )
