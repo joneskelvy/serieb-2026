@@ -396,29 +396,69 @@ document.querySelector("#cards").innerHTML =
   createCard(
     "29/05",
     "sexta",
-    createGame("juventude", "19:00", "america",) 
+    createGame("juventude", "19:00", "america", 3,0) 
   ) +
    createCard(
     "30/05",
     "sábado",
-    createGame("atletico", "16:00", "goias",) +
-    createGame("avai", "16:00", "criciuma",) +
-    createGame("athletic", "18:00", "fortaleza",) +
-    createGame("sport", "20:30", "nautico",) 
+    createGame("atletico", "16:00", "goias", 1,1) +
+    createGame("avai", "16:00", "criciuma", 1,2) +
+    createGame("athletic", "18:00", "fortaleza", 1,0) +
+    createGame("sport", "20:30", "nautico", 2,0) 
   ) +
   createCard(
     "31/05",
     "domingo",
-    createGame("bernardo", "11:00", "novorizontino",) +
-    createGame("londrina", "11:00", "vila",) +
-    createGame("ceara", "16:00", "operario",) +
-    createGame("cuiaba", "20:30", "crb",) 
+    createGame("bernardo", "11:00", "novorizontino", 1,1) +
+    createGame("londrina", "11:00", "vila", 0,1) +
+    createGame("ceara", "16:00", "operario", 1,2) +
+    createGame("cuiaba", "20:30", "crb", 2,0) 
   ) +
   createCard(
     "01/06",
     "segunda",
-    createGame("ponte", "19:00", "botafogo",) 
+    createGame("ponte", "19:00", "botafogo", 0,0) 
+  ) 
+) +
+
+  createRound(12,
+
+  createCard(
+    "05/06",
+    "sexta",
+    createGame("operario", "20:00", "juventude",)
+  ) +
+  createCard(
+    "06/06",  
+    "sábado",
+    createGame("criciuma", "11:00", "londrina",)
+  ) +
+  createCard(
+    "07/06",
+    "domingo",
+    createGame("crb", "16:00", "bernardo",)
+  ) +
+    createCard(
+    "08/06",
+    "segunda",
+    createGame("america", "20:00", "atletico",) +
+    createGame("vila", "20:00", "botafogo",)
+    ) +
+    createCard(
+    "09/06",
+    "terça",  
+    createGame("ponte", "19:00", "cuiaba",) +
+    createGame("nautico", "19:00", "fortaleza",)
+    ) +
+    createCard(
+    "10/06",  
+    "quarta",
+    createGame("ceara", "20:00", "avai",) +
+    createGame("goias", "20:00", "novorizontino",) +
+    createGame("sport", "20:00", "athletic",)
   )
+  
+     
 )
 
 /*===================================
