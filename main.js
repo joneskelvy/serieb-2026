@@ -540,51 +540,251 @@ btnTable.addEventListener("click", () => {
 const table = [
 
   {
-    team: "Fortaleza",
+    team: "Sport",
     pts: 22,
-    games: 10,
-    wins: 7,
-    draws: 1,
-    losses: 2
-  },
-
-  {
-    team: "CRB",
-    pts: 21,
-    games: 10,
+    games: 11,
     wins: 6,
-    draws: 3,
-    losses: 1
+    draws: 4,
+    losses: 1,
+    sg: 8,
+    lastGames: ["win", "win", "loss", "win", "win"]
   },
 
   {
     team: "Vila Nova",
-    pts: 20,
-    games: 10,
+    pts: 22,
+    games: 11,
     wins: 6,
-    draws: 2,
-    losses: 2
+    draws: 4,
+    losses: 1,
+    sg: 6,
+    lastGames: ["draw", "loss", "win", "win", "win"]
+  },
+
+  {
+    team: "São Bernardo",
+    pts: 21,
+    games: 11,
+    wins: 6,
+    draws: 3,
+    losses: 2,
+    sg: 9,
+    lastGames: ["win", "win", "draw", "win", "draw"]
+  },
+
+  {
+    team: "Náutico",
+    pts: 19,
+    games: 11,
+    wins: 6,
+    draws: 1,
+    losses: 4,
+    sg: 5,
+    lastGames: ["draw", "win", "win", "win", "loss"]
+  },
+
+  {
+    team: "Fortaleza",
+    pts: 18,
+    games: 11,
+    wins: 5,
+    draws: 3,
+    losses: 3,
+    sg: 3,
+    lastGames: ["win", "draw", "loss", "win", "loss"]
   },
 
   {
     team: "Goiás",
-    pts: 19,
-    games: 10,
-    wins: 6,
-    draws: 1,
-    losses: 3
+    pts: 17,
+    games: 11,
+    wins: 5,
+    draws: 2,
+    losses: 4,
+    sg: -1,
+    lastGames: ["loss", "win", "win", "win", "draw"]
   },
 
   {
-    team: "Sport",
-    pts: 18,
-    games: 10,
-    wins: 5,
+    team: "Novorizontino",
+    pts: 17,
+    games: 11,
+    wins: 4,
+    draws: 5,
+    losses: 2,
+    sg: 3,
+    lastGames: ["draw", "win", "draw", "win", "draw"]
+  },
+
+  {
+    team: "Criciúma",
+    pts: 17,
+    games: 11,
+    wins: 4,
+    draws: 5,
+    losses: 2,
+    sg: 3,
+    lastGames: ["draw", "draw", "draw", "draw", "win"]
+  },
+
+  {
+    team: "Athletic-MG",
+    pts: 17,
+    games: 11,
+    wins: 4,
+    draws: 5,
+    losses: 2,
+    sg: 2,
+    lastGames: ["draw", "draw", "draw", "win", "win"]
+  },
+
+  {
+    team: "Juventude",
+    pts: 16,
+    games: 11,
+    wins: 4,
+    draws: 4,
+    losses: 3,
+    sg: 3,
+    lastGames: ["draw", "draw", "draw", "loss", "win"]
+  },
+
+  {
+    team: "Operário-PR",
+    pts: 16,
+    games: 11,
+    wins: 4,
+    draws: 4,
+    losses: 3,
+    sg: -2,
+    lastGames: ["win", "loss", "loss", "draw", "win"]
+  },
+
+    {
+    team: "CRB",
+    pts: 14,
+    games: 11,
+    wins: 4,
+    draws: 2,
+    losses: 5,
+    sg: 0,
+    lastGames: ["win", "win", "win", "win", "loss"]
+  },
+
+    {
+    team: "Ceará",
+    pts: 13,
+    games: 11,
+    wins: 3,
+    draws: 4,
+    losses: 4,
+    sg: -1,
+    lastGames: ["loss", "loss", "win", "loss", "loss"]
+  },
+
+    {
+    team: "Atlético-GO",
+    pts: 13,
+    games: 11,
+    wins: 3,
+    draws: 4,
+    losses: 4,
+    sg: -1,
+    lastGames: ["draw", "win", "draw", "loss", "draw"]
+  },
+
+    {
+    team: "Cuiabá",
+    pts: 13,
+    games: 11,
+    wins: 2,
+    draws: 7,
+    losses: 2,
+    sg: 1,
+    lastGames: ["draw", "draw", "draw", "loss", "win"]
+  },
+
+    {
+    team: "Botafogo-SP",
+    pts: 10,
+    games: 11,
+    wins: 2,
+    draws: 4,
+    losses: 5,
+    sg: 0,
+    lastGames: ["draw", "loss", "loss", "loss", "draw"]
+  },
+
+    {
+    team: "Avaí",
+    pts: 10,
+    games: 11,
+    wins: 2,
+    draws: 4,
+    losses: 5,
+    sg: -4,
+    lastGames: ["draw", "draw", "loss", "loss", "loss"]
+  },
+
+    {
+    team: "Londrina",
+    pts: 8,
+    games: 11,
+    wins: 2,
+    draws: 2,
+    losses: 7,
+    sg: -7,
+    lastGames: ["loss", "loss", "win", "loss", "loss"]
+  },
+
+    {
+    team: "Ponte Preta",
+    pts: 8,
+    games: 11,
+    wins: 2,
+    draws: 2,
+    losses: 7,
+    sg: -11,
+    lastGames: ["loss", "loss", "loss", "loss", "draw"]
+  },
+
+    {
+    team: "América-MG",
+    pts: 3,
+    games: 11,
+    wins: 0,
     draws: 3,
-    losses: 2
-  }
+    losses: 8,
+    sg: -16,
+    lastGames: ["loss", "loss", "draw", "loss", "loss"]
+  },
+
 
 ]
+
+function createForm(lastGames) {
+
+  return `
+    <div class="form">
+
+      ${lastGames.map(result => `
+
+        <span
+          class="${result}"
+          title="${
+            result === "win"
+              ? "Vitória"
+              : result === "draw"
+              ? "Empate"
+              : "Derrota"
+          }"
+        ></span>
+
+      `).join("")}
+
+    </div>
+  `
+}
 
 function renderTable() {
 
@@ -597,27 +797,37 @@ function renderTable() {
 
     classificationTable.innerHTML += `
 
-      <tr>
+<tr>
 
-        <td>${index + 1}</td>
+  <td class="position">
+    ${index + 1}
+  </td>
 
-        <td class="team-column">
-          ${team.team}
-        </td>
+  <td class="team-column">
+    ${team.team}
+  </td>
 
-        <td>${team.pts}</td>
+  <td class="points">
+    ${team.pts}
+  </td>
 
-        <td>${team.games}</td>
+  <td>${team.games}</td>
 
-        <td>${team.wins}</td>
+  <td>${team.wins}</td>
 
-        <td>${team.draws}</td>
+  <td>${team.draws}</td>
 
-        <td>${team.losses}</td>
+  <td>${team.losses}</td>
 
-      </tr>
+  <td>${team.sg ?? 0}</td>
 
-    `
+  <td>
+    ${createForm(team.lastGames || [])}
+  </td>
+
+</tr>
+
+`
   })
 }
 
