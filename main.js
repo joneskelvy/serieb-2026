@@ -426,17 +426,17 @@ document.querySelector("#cards").innerHTML =
   createCard(
     "05/06",
     "sexta",
-    createGame("operario", "20:00", "juventude",)
+    createGame("operario", "20:00", "juventude", 2,1) 
   ) +
   createCard(
     "06/06",  
     "sábado",
-    createGame("criciuma", "11:00", "londrina",)
+    createGame("criciuma", "11:00", "londrina", 1,0)
   ) +
   createCard(
     "07/06",
     "domingo",
-    createGame("crb", "16:00", "bernardo",)
+    createGame("crb", "16:00", "bernardo",2,3)
   ) +
     createCard(
     "08/06",
@@ -539,6 +539,18 @@ btnTable.addEventListener("click", () => {
 
 const table = [
 
+{
+    team: "São Bernardo",
+    pts: 24,
+    games: 12,
+    wins: 7,
+    draws: 3,
+    losses: 2,
+    sg: 10,
+    lastGames: ["win", "draw", "win", "draw", "win"]
+  },
+
+
   {
     team: "Sport",
     pts: 22,
@@ -562,14 +574,14 @@ const table = [
   },
 
   {
-    team: "São Bernardo",
-    pts: 21,
-    games: 11,
-    wins: 6,
-    draws: 3,
+    team: "Criciúma",
+    pts: 20,
+    games: 12,
+    wins: 5,
+    draws: 5,
     losses: 2,
-    sg: 9,
-    lastGames: ["win", "win", "draw", "win", "draw"]
+    sg: 4,
+    lastGames: ["draw", "draw", "draw", "win", "win"]
   },
 
   {
@@ -581,6 +593,17 @@ const table = [
     losses: 4,
     sg: 5,
     lastGames: ["draw", "win", "win", "win", "loss"]
+  },
+
+{
+    team: "Operário-PR",
+    pts: 19,
+    games: 12,
+    wins: 5,
+    draws: 4,
+    losses: 3,
+    sg: -1,
+    lastGames: ["loss", "loss", "draw", "win", "win"]
   },
 
   {
@@ -617,17 +640,6 @@ const table = [
   },
 
   {
-    team: "Criciúma",
-    pts: 17,
-    games: 11,
-    wins: 4,
-    draws: 5,
-    losses: 2,
-    sg: 3,
-    lastGames: ["draw", "draw", "draw", "draw", "win"]
-  },
-
-  {
     team: "Athletic-MG",
     pts: 17,
     games: 11,
@@ -641,34 +653,23 @@ const table = [
   {
     team: "Juventude",
     pts: 16,
-    games: 11,
+    games: 12,
     wins: 4,
     draws: 4,
-    losses: 3,
-    sg: 3,
-    lastGames: ["draw", "draw", "draw", "loss", "win"]
-  },
-
-  {
-    team: "Operário-PR",
-    pts: 16,
-    games: 11,
-    wins: 4,
-    draws: 4,
-    losses: 3,
-    sg: -2,
-    lastGames: ["win", "loss", "loss", "draw", "win"]
+    losses: 4,
+    sg: 2,
+    lastGames: ["draw", "draw", "loss", "win", "loss"]
   },
 
     {
     team: "CRB",
     pts: 14,
-    games: 11,
+    games: 12,
     wins: 4,
     draws: 2,
-    losses: 5,
-    sg: 0,
-    lastGames: ["win", "win", "win", "win", "loss"]
+    losses: 6,
+    sg: -1,
+    lastGames: ["win", "win", "win", "loss", "loss"]
   },
 
     {
@@ -729,12 +730,12 @@ const table = [
     {
     team: "Londrina",
     pts: 8,
-    games: 11,
+    games: 12,
     wins: 2,
     draws: 2,
-    losses: 7,
-    sg: -7,
-    lastGames: ["loss", "loss", "win", "loss", "loss"]
+    losses: 8,
+    sg: -8,
+    lastGames: ["loss", "win", "loss", "loss", "loss"]
   },
 
     {
