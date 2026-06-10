@@ -441,14 +441,14 @@ document.querySelector("#cards").innerHTML =
     createCard(
     "08/06",
     "segunda",
-    createGame("america", "20:00", "atletico",) +
-    createGame("vila", "20:00", "botafogo",)
+    createGame("america", "20:00", "atletico", 1,2) +
+    createGame("vila", "20:00", "botafogo", 1,0)
     ) +
     createCard(
     "09/06",
     "terça",  
-    createGame("ponte", "19:00", "cuiaba",) +
-    createGame("nautico", "19:00", "fortaleza",)
+    createGame("ponte", "19:00", "cuiaba", 1,2) +
+    createGame("nautico", "19:00", "fortaleza", 0,1)
     ) +
     createCard(
     "10/06",  
@@ -540,6 +540,18 @@ btnTable.addEventListener("click", () => {
 const table = [
 
 {
+    team: "Vila Nova",
+    pts: 25,
+    games: 12,
+    wins: 7,
+    draws: 4,
+    losses: 1,
+    sg: 7,
+    lastGames: ["loss", "win", "win", "win", "win"]
+  },
+
+
+  {
     team: "São Bernardo",
     pts: 24,
     games: 12,
@@ -549,7 +561,6 @@ const table = [
     sg: 10,
     lastGames: ["win", "draw", "win", "draw", "win"]
   },
-
 
   {
     team: "Sport",
@@ -562,15 +573,15 @@ const table = [
     lastGames: ["win", "win", "loss", "win", "win"]
   },
 
-  {
-    team: "Vila Nova",
-    pts: 22,
-    games: 11,
+{
+    team: "Fortaleza",
+    pts: 21,
+    games: 12,
     wins: 6,
-    draws: 4,
-    losses: 1,
-    sg: 6,
-    lastGames: ["draw", "loss", "win", "win", "win"]
+    draws: 3,
+    losses: 3,
+    sg: 4,
+    lastGames: ["draw", "loss", "win", "loss", "win"]
   },
 
   {
@@ -590,9 +601,9 @@ const table = [
     games: 11,
     wins: 6,
     draws: 1,
-    losses: 4,
-    sg: 5,
-    lastGames: ["draw", "win", "win", "win", "loss"]
+    losses: 5,
+    sg: 4,
+    lastGames: ["win", "win", "win", "loss", "loss"]
   },
 
 {
@@ -604,17 +615,6 @@ const table = [
     losses: 3,
     sg: -1,
     lastGames: ["loss", "loss", "draw", "win", "win"]
-  },
-
-  {
-    team: "Fortaleza",
-    pts: 18,
-    games: 11,
-    wins: 5,
-    draws: 3,
-    losses: 3,
-    sg: 3,
-    lastGames: ["win", "draw", "loss", "win", "loss"]
   },
 
   {
@@ -661,6 +661,28 @@ const table = [
     lastGames: ["draw", "draw", "loss", "win", "loss"]
   },
 
+{
+    team: "Atlético-GO",
+    pts: 16,
+    games: 12,
+    wins: 4,
+    draws: 4,
+    losses: 4,
+    sg: 0,
+    lastGames: ["win", "draw", "loss", "draw", "win"]
+  },
+
+{
+    team: "Cuiabá",
+    pts: 16,
+    games: 12,
+    wins: 3,
+    draws: 7,
+    losses: 2,
+    sg: 2,
+    lastGames: ["draw", "draw", "loss", "win", "win"]
+  },
+
     {
     team: "CRB",
     pts: 14,
@@ -683,37 +705,16 @@ const table = [
     lastGames: ["loss", "loss", "win", "loss", "loss"]
   },
 
-    {
-    team: "Atlético-GO",
-    pts: 13,
-    games: 11,
-    wins: 3,
-    draws: 4,
-    losses: 4,
-    sg: -1,
-    lastGames: ["draw", "win", "draw", "loss", "draw"]
-  },
-
-    {
-    team: "Cuiabá",
-    pts: 13,
-    games: 11,
-    wins: 2,
-    draws: 7,
-    losses: 2,
-    sg: 1,
-    lastGames: ["draw", "draw", "draw", "loss", "win"]
-  },
 
     {
     team: "Botafogo-SP",
     pts: 10,
-    games: 11,
+    games: 12,
     wins: 2,
     draws: 4,
-    losses: 5,
-    sg: 0,
-    lastGames: ["draw", "loss", "loss", "loss", "draw"]
+    losses: 6,
+    sg: -1,
+    lastGames: ["loss", "loss", "loss", "draw", "loss"]
   },
 
     {
@@ -741,23 +742,23 @@ const table = [
     {
     team: "Ponte Preta",
     pts: 8,
-    games: 11,
+    games: 12,
     wins: 2,
     draws: 2,
-    losses: 7,
-    sg: -11,
-    lastGames: ["loss", "loss", "loss", "loss", "draw"]
+    losses: 8,
+    sg: -12,
+    lastGames: ["loss", "loss", "loss", "draw", "loss"]
   },
 
     {
     team: "América-MG",
     pts: 3,
-    games: 11,
+    games: 12,
     wins: 0,
     draws: 3,
-    losses: 8,
-    sg: -16,
-    lastGames: ["loss", "loss", "draw", "loss", "loss"]
+    losses: 9,
+    sg: -17,
+    lastGames: ["loss", "draw", "loss", "loss", "loss"]
   },
 
 
