@@ -466,24 +466,24 @@ createRound(13,
   createCard(
     "12/06",
     "sexta",
-    createGame("atletico", "19:00", "crb",)
+    createGame("atletico", "19:00", "crb", 3,3)
   ) +
   createCard(
     "14/06",
     "domingo",
-    createGame("juventude", "11:00", "ponte",) + 
-    createGame("bernardo", "11:00", "sport",) +
-    createGame("athletic", "16:00", "goias",) +
-    createGame("cuiaba", "17:00", "vila",) +
-    createGame("botafogo", "19:00", "operario",) +
-    createGame("novorizontino", "19:00", "nautico",) 
+    createGame("juventude", "11:00", "ponte",3,0) + 
+    createGame("bernardo", "11:00", "sport", 0,0) +
+    createGame("athletic", "16:00", "goias", 1,1) +
+    createGame("cuiaba", "17:00", "vila", 1,0) +
+    createGame("botafogo", "19:00", "operario", 2,1) +
+    createGame("novorizontino", "19:00", "nautico", 2,2) 
   ) +
 
   createCard(
     "15/06",
     "segunda",
-    createGame("criciuma", "21:00", "ceara",) +
-    createGame("londrina", "21:00", "avai",)
+    createGame("criciuma", "21:00", "ceara",1,1) +
+    createGame("londrina", "21:00", "avai", 3,2)
   ) +
 
   createCard(
@@ -573,37 +573,40 @@ btnTable.addEventListener("click", () => {
 const table = [
 
 {
-    team: "Vila Nova",
+
+    team: "São Bernardo",
     pts: 25,
-    games: 12,
+    games: 13,
     wins: 7,
     draws: 4,
-    losses: 1,
-    sg: 7,
-    lastGames: ["loss", "win", "win", "win", "win"]
-  },
-
-
-  {
-    team: "São Bernardo",
-    pts: 24,
-    games: 12,
-    wins: 7,
-    draws: 3,
     losses: 2,
     sg: 10,
-    lastGames: ["win", "draw", "win", "draw", "win"]
+    lastGames: ["draw", "win", "draw", "win", "draw"]
   },
+
+  
+{
+    
+    team: "Vila Nova",
+    pts: 25,
+    games: 13,
+    wins: 7,
+    draws: 4,
+    losses: 2,
+    sg: 6,
+    lastGames: ["win", "win", "win", "win", "loss"]
+  },
+    
 
   {
     team: "Sport",
-    pts: 23,
-    games: 12,
+    pts: 24,
+    games: 13,
     wins: 6,
-    draws: 5,
+    draws: 6,
     losses: 1,
     sg: 8,
-    lastGames: ["win", "loss", "win", "win", "draw"]
+    lastGames: ["loss", "win", "win", "draw", "draw"]
   },
 
 {
@@ -619,169 +622,172 @@ const table = [
 
 {
     team: "Novorizontino",
-    pts: 20,
-    games: 12,
+    pts: 21,
+    games: 13,
     wins: 5,
-    draws: 5,
+    draws: 6,
     losses: 2,
     sg: 7,
-    lastGames: ["win", "draw", "win", "draw", "win"]
+    lastGames: ["draw", "win", "draw", "win", "draw"]
   },
 
   {
     team: "Criciúma",
-    pts: 20,
-    games: 12,
+    pts: 21,
+    games: 13,
     wins: 5,
-    draws: 5,
-    losses: 2,
-    sg: 4,
-    lastGames: ["draw", "draw", "draw", "win", "win"]
-  },
-
-  {
-    team: "Náutico",
-    pts: 19,
-    games: 12,
-    wins: 6,
-    draws: 1,
-    losses: 5,
-    sg: 4,
-    lastGames: ["win", "win", "win", "loss", "loss"]
-  },
-
-{
-    team: "Operário-PR",
-    pts: 19,
-    games: 12,
-    wins: 5,
-    draws: 4,
-    losses: 3,
-    sg: -1,
-    lastGames: ["loss", "loss", "draw", "win", "win"]
-  },
-
-{
-    team: "Athletic-MG",
-    pts: 18,
-    games: 12,
-    wins: 4,
     draws: 6,
     losses: 2,
-    sg: 2,
+    sg: 4,
     lastGames: ["draw", "draw", "win", "win", "draw"]
   },
 
   {
-    team: "Goiás",
-    pts: 17,
-    games: 12,
-    wins: 5,
+    team: "Náutico",
+    pts: 20,
+    games: 13,
+    wins: 6,
     draws: 2,
     losses: 5,
-    sg: -5,
-    lastGames: ["win", "win", "win", "draw", "loss"]
-  },
-
-  {
-    team: "Juventude",
-    pts: 16,
-    games: 12,
-    wins: 4,
-    draws: 4,
-    losses: 4,
-    sg: 2,
-    lastGames: ["draw", "draw", "loss", "win", "loss"]
+    sg: 4,
+    lastGames: ["win", "win", "loss", "loss", "draw"]
   },
 
  {
-    team: "Ceará",
-    pts: 16,
-    games: 12,
-    wins: 4,
+    team: "Juventude",
+    pts: 19,
+    games: 13,
+    wins: 5,
     draws: 4,
     losses: 4,
-    sg: 0,
-    lastGames: ["loss", "win", "loss", "loss", "win"]
+    sg: 5,
+    lastGames: ["draw", "loss", "win", "loss", "win"]
   },
 
 
 {
-    team: "Atlético-GO",
-    pts: 16,
-    games: 12,
-    wins: 4,
+    team: "Operário-PR",
+    pts: 19,
+    games: 13,
+    wins: 5,
     draws: 4,
     losses: 4,
-    sg: 0,
-    lastGames: ["win", "draw", "loss", "draw", "win"]
+    sg: -2,
+    lastGames: ["loss", "draw", "win", "win", "loss"]
   },
 
 {
     team: "Cuiabá",
-    pts: 16,
-    games: 12,
-    wins: 3,
+    pts: 19,
+    games: 13,
+    wins: 4,
+    draws: 7,
+    losses: 2,
+    sg: 3,
+    lastGames: ["draw", "loss", "win", "win", "win"]
+  },
+
+
+{
+    team: "Athletic-MG",
+    pts: 19,
+    games: 13,
+    wins: 4,
     draws: 7,
     losses: 2,
     sg: 2,
-    lastGames: ["draw", "draw", "loss", "win", "win"]
+    lastGames: ["draw", "win", "win", "draw", "draw"]
+  },
+
+  {
+    team: "Goiás",
+    pts: 18,
+    games: 13,
+    wins: 5,
+    draws: 3,
+    losses: 5,
+    sg: -5,
+    lastGames: ["win", "win", "draw", "loss", "draw"]
+  },
+
+{
+    team: "Atlético-GO",
+    pts: 17,
+    games: 13,
+    wins: 4,
+    draws: 5,
+    losses: 4,
+    sg: 0,
+    lastGames: ["draw", "loss", "draw", "win", "draw"]
+  },
+
+
+ {
+    team: "Ceará",
+    pts: 17,
+    games: 13,
+    wins: 4,
+    draws: 5,
+    losses: 4,
+    sg: 0,
+    lastGames: ["win", "loss", "loss", "win", "draw"]
   },
 
     {
     team: "CRB",
-    pts: 14,
-    games: 12,
+    pts: 15,
+    games: 13,
     wins: 4,
-    draws: 2,
+    draws: 3,
     losses: 6,
     sg: -1,
-    lastGames: ["win", "win", "win", "loss", "loss"]
+    lastGames: ["win", "win", "loss", "loss", "draw"]
   },
 
 
     {
     team: "Botafogo-SP",
-    pts: 10,
-    games: 12,
-    wins: 2,
+    pts: 13,
+    games: 13,
+    wins: 3,
     draws: 4,
     losses: 6,
-    sg: -1,
-    lastGames: ["loss", "loss", "loss", "draw", "loss"]
+    sg: 0,
+    lastGames: ["loss", "loss", "draw", "loss", "win"]
   },
+
+{
+    team: "Londrina",
+    pts: 11,
+    games: 13,
+    wins: 3,
+    draws: 2,
+    losses: 8,
+    sg: -7,
+    lastGames: ["win", "loss", "loss", "loss", "win"]
+  },
+
 
     {
     team: "Avaí",
     pts: 10,
-    games: 12,
+    games: 13,
     wins: 2,
     draws: 4,
-    losses: 6,
-    sg: -5,
-    lastGames: ["draw", "loss", "loss", "loss", "loss"]
-  },
-
-    {
-    team: "Londrina",
-    pts: 8,
-    games: 12,
-    wins: 2,
-    draws: 2,
-    losses: 8,
-    sg: -8,
-    lastGames: ["loss", "win", "loss", "loss", "loss"]
+    losses: 7,
+    sg: -6,
+    lastGames: ["loss", "loss", "loss", "loss", "loss"]
   },
 
     {
     team: "Ponte Preta",
     pts: 8,
-    games: 12,
+    games: 13,
     wins: 2,
     draws: 2,
-    losses: 8,
-    sg: -12,
-    lastGames: ["loss", "loss", "loss", "draw", "loss"]
+    losses: 9,
+    sg: -15,
+    lastGames: ["loss", "loss", "draw", "loss", "loss"]
   },
 
     {
