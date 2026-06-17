@@ -492,7 +492,46 @@ createRound(13,
     createGame("fortaleza", "20:00", "america",)
   )
 
-)
+) + 
+
+  createRound(14,
+
+    createCard(
+      "18/06",
+      "quinta",
+      createGame("sport", "21:00", "atletico",) 
+    ) +
+
+    createCard(
+      "20/06",
+      "sábado",
+      createGame("londrina", "11:00", "athletic",) +
+      createGame("ceara", "19:00", "botafogo",) +
+      createGame("vila", "19:00", "nautico",)
+    ) +
+
+    createCard(
+      "21/06",
+      "domingo",
+      createGame("avai", "11:00", "cuiaba",) +
+      createGame("crb", "16:00", "fortaleza",) +
+      createGame("bernardo", "17:00", "juventude",) +
+      createGame("goias", "18:30", "operario",)
+    ) +
+
+     createCard(
+      "22/06",
+      "segunda",
+      createGame("ponte", "20:00", "novorizontino",) 
+    ) +
+
+     createCard(
+      "23/06",
+      "terça",
+      createGame("america", "20:00", "criciuma",) 
+    ) 
+
+  )
 
 /*===================================
 
@@ -612,12 +651,12 @@ const table = [
 {
     team: "Fortaleza",
     pts: 21,
-    games: 12,
+    games: 13,
     wins: 6,
     draws: 3,
-    losses: 3,
+    losses: 4,
     sg: 4,
-    lastGames: ["draw", "loss", "win", "loss", "win"]
+    lastGames: ["loss", "win", "loss", "win", "loss"]
   },
 
 {
@@ -792,13 +831,13 @@ const table = [
 
     {
     team: "América-MG",
-    pts: 3,
-    games: 12,
-    wins: 0,
+    pts: 6,
+    games: 13,
+    wins: 1,
     draws: 3,
     losses: 9,
-    sg: -17,
-    lastGames: ["loss", "draw", "loss", "loss", "loss"]
+    sg: -14,
+    lastGames: ["draw", "loss", "loss", "loss", "win"]
   },
 
 
